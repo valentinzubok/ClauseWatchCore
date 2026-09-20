@@ -9,7 +9,7 @@
 | **Source** | [`contracts/ClauseWatch.py`](contracts/ClauseWatch.py) — byte-identical in both repos — runner `py-genlayer:5jycge4q8k23462jtb0b9fyey1s9qz928sz2nbrd9mg4sxqg2qng` |
 | **Source sha256** | `37b3c7f7a18e66a9498baa74f1379bb165bd3269375573064a190f5858f02320` |
 | **Console (separate repo)** | https://valentinzubok.github.io/ClauseWatch/ |
-| **Watched page** | https://valentinzubok.github.io/ClauseWatch/fixtures/terms.html (source: [ClauseWatch repo](https://github.com/valentinzubok/ClauseWatch/blob/main/web/public/fixtures/terms.html)) |
+| **Watched page** | https://valentinzubok.github.io/ClauseWatch/fixtures/terms.html (in the [ClauseWatch repo](https://github.com/valentinzubok/ClauseWatch/blob/main/web/public/fixtures/terms.html)) |
 
 ## Verify that the deployed code equals the repository
 
@@ -44,6 +44,15 @@ The watched page is a file in this repository, so every version the contract rea
 State after step 4: `checks 4`, `changes 2`, `material_changes 1`, baseline still v1 with the new version pending
 acknowledgement. `alert-1` (cosmetic) and `alert-2` (material) sit side by side in `list_alerts`, each carrying both
 hashes and the baseline version it was judged against.
+
+## Demo video
+
+[Demo video](https://github.com/valentinzubok/ClauseWatch/blob/main/assets/demo/clausewatch-demo.mp4): 2:43 recording of the live console, no mocks. It shows the watched page
+and its commits, chain state loaded without a wallet, then `check` → **material change**, `acknowledge` → baseline v2,
+and a second watch registered from scratch, ending on the transaction in the explorer.
+
+For an unattended recording a small EIP-1193 wallet signing with test keys is injected in place of the MetaMask
+popup; consensus waits are sped up 8x and rate-limit pauses are cut.
 
 ## Notes
 
